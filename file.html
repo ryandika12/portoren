@@ -2,46 +2,148 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Daftar File</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daftar File Ryan</title>
   <style>
+    :root {
+      --primary: hsl(167, 39%, 51%);
+      --bg: #f4f6f9;
+      --text: #333;
+      --card-bg: #fff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding-bottom: 80px; /* untuk memberi ruang pada tombol tetap */
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
       padding: 20px;
     }
 
     h2 {
-      color: #333;
-    }
-
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    li {
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
+    #searchBox {
+      width: 100%;
+      padding: 12px 16px;
+      margin: 20px 0;
+      font-size: 16px;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    li {
+      background: var(--card-bg);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.07);
+      transition: 0.2s ease;
+    }
+
+    li:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    }
+
     a.download-link {
+      color: var(--primary);
+      font-weight: 600;
       text-decoration: none;
-      color: #007bff;
-      font-weight: bold;
+      font-size: 16px;
+      display: block;
+      word-wrap: break-word;
     }
 
     a.download-link:hover {
       text-decoration: underline;
     }
+
+    .back-home {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 28px;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s;
+      z-index: 100;
+    }
+
+ 
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 20px;
+      }
+
+      .back-home {
+        width: 90%;
+        left: 5%;
+        transform: none;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <h2>Daftar File Ryan:</h2>
-  <ul>
-    <li><a href="file/resetter.rar" class="download-link" download>Resetter</a></li>
-    <li><a href="file/cd.pdf" class="download-link" download>Aktivasi Office</a></li>
-    <li><a href="file/contoh3.xlsx" class="download-link" download>Download File 3 (Excel)</a></li>
-    <li><a href="file/contoh4.zip" class="download-link" download>Download File 4 (ZIP)</a></li>
-  </ul>
+  <div class="container">
+    <h2>📁 Daftar File Ryan</h2>
+
+    <input type="text" id="searchBox" placeholder="🔍 Cari file...">
+
+    <ul id="fileList">
+        <li><a href="file/resetter.rar" class="download-link" download>Resetter Printer Epson</a></li>
+        <li><a href="file/cd.pdf" class="download-link" download>Aktivasi Office With Code</a></li>
+        <li><a href="file/kmsauto.rar" class="download-link" download>KMSAuto Office & Windows</a></li>
+        <li><a href="https://software.download.prss.microsoft.com/dbazure/Win10_22H2_English_x64v1.iso?t=3f44bf08-1028-4f28-9013-d7a2d46933a3&P1=1744584036&P2=601&P3=2&P4=2tPfZjQYHcn%2fBbnlqHTZAsAo3Ow7vR32%2fBZv9FbaHbLv9fkK85I%2fh1k5Pcg3yedaRCn6IVB7LRuignoNM97St2XfJw5rrupfFj0YZasC%2bSzMFTPlu7xZ%2b4XRUYdglxJFqHcVHguCmD6NiQK%2boeYTcbOFMbl5xPniJ2TN%2b4qMaKMc7EZUyyKZrjCLILOK8OK2SN3WQB5TEQf8I6j%2fzwdcZtBxGRQgO7lpLZQZRoHn6QK4z1ybLU%2bzDs8Ik9F%2bNh7fPlaZHRgFbnwG9gMD7UnVDnPasSZ0irbDceEyhPFiCyC8kej4LQHNQgRWdRzUF4%2f%2fFiHtowZYLbtHWgN9LB7lww%3d%3d" class="nav-link download-link" download>Win10_22H2_English_x64v1.iso</a></li>
+        <li><a href="https://github.com/pbatard/rufus/releases/download/v4.7/rufus-4.7.exe" class="download-link nav-link" download>Rufus</a></li>
+        <li><a href="file/AnyDesk.exe" class="download-link" download>AnyDesk</a></li>
+    </ul>
+  </div>
+
+  <!-- Tombol tetap di bawah -->
+  <a href="index.html" class="back-home">🔙 Kembali ke Beranda</a>
+
+  <script>
+    const searchBox = document.getElementById('searchBox');
+    const files = document.querySelectorAll('#fileList li');
+
+    searchBox.addEventListener('keyup', function () {
+      const keyword = this.value.toLowerCase();
+      files.forEach(file => {
+        const text = file.textContent.toLowerCase();
+        file.style.display = text.includes(keyword) ? "block" : "none";
+      });
+    });
+  </script>
 
 </body>
 </html>
